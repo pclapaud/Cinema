@@ -48,3 +48,15 @@ meilleure idée qui soit : si on peut ajouter des films et qu'on met
 à jour l'application, toutes les affiches associées aux films seront
 effacées. Paramétrer l'application pour que les affiches soient stockées
 et récupérées dans un dossier externe et indépendant.
+
+###### Gestion alternative des URLs
+
+Pour récupérer une affiche ou le détail d'un film, plutôt que d'utiliser un paramètre de type
+**?id=n**, on souhaite que l'id fasse partie de l'URL :
+
+**GET** `http://localhost:8080/affiche/2` pour obtenir l'affiche du film
+2
+
+ou
+
+**GET** `http://localhost:8080/affiche/5` pour obtenir le détail du film 5
