@@ -13,9 +13,9 @@ l'affiche du film dont l'identifiant est **n**
 * La liste devra être triée par ordre alphabétique croissant,
 * chaque titre est un lien vers le détail du film
 * Paramétrer la servlet pour afficher les films par :
-  - ordre alphabétique croissant/décroissant
-  - note croissante/décroissante
-  - par défaut c'est ordre alphabétique croissant
+  * ordre alphabétique croissant/décroissant
+  * note croissante/décroissante
+  * par défaut c'est ordre alphabétique croissant
 
 
 
@@ -51,6 +51,10 @@ et récupérées dans un dossier externe et indépendant.
 
 ###### Gestion alternative des URLs
 
+L'usage de paramètres dans l'URL n'est pas toujours souhaitable : plus difficile à lire par un humain et pas toujours bien pris en compte par les moteurs de recherche.
+
+Bien souvent les paramètres de l'url (_query string_) peuvent être évités par transformation en chemin (_path_) ; on parle alors d'_URL Semantic_.
+
 Pour récupérer une affiche ou le détail d'un film, plutôt que d'utiliser un paramètre de type
 **?id=n**, on souhaite que l'id fasse partie de l'URL :
 
@@ -59,4 +63,4 @@ Pour récupérer une affiche ou le détail d'un film, plutôt que d'utiliser un 
 
 ou
 
-**GET** `http://localhost:8080/affiche/5` pour obtenir le détail du film 5
+**GET** `http://localhost:8080/detail/5` pour obtenir le détail du film 5
