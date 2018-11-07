@@ -10,7 +10,15 @@
     </servlet>
     <servlet>
         <servlet-name>list</servlet-name>
-        <servlet-class>fr.laerce.cinema.list</servlet-class>
+        <servlet-class>fr.laerce.cinema.Liste</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>film</servlet-name>
+        <servlet-class>fr.laerce.cinema.InfoFilm</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Session</servlet-name>
+        <servlet-class>fr.laerce.cinema.Session</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -21,5 +29,13 @@
     <servlet-mapping>
         <servlet-name>list</servlet-name>
         <url-pattern>/list</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>film</servlet-name>
+        <url-pattern>/film</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Session</servlet-name>
+        <url-pattern>/Session</url-pattern>
     </servlet-mapping>
 </web-app>

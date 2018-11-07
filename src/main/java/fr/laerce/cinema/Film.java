@@ -10,4 +10,7 @@ public class Film{
     String titre;
     String afficheNom;
     double note;
+    public String noteString(){
+        return String.valueOf(this.note);
+    }
 }

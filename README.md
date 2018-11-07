@@ -30,7 +30,8 @@ l'identifiant est **n**
 
 ###### Créer une servlet et son formulaire associé qui permettent de rechercher un film par titre
 
-Faire en sorte que le critère de recherche ne soit pas sensible à la casse (aux majuscules et minuscules) et qu'il constitue une partie du résultat
+Faire en sorte que le critère de recherche ne soit pas sensible à la casse (aux majuscules et minuscules) 
+et qu'il constitue une partie du résultat
 
 Par exemple, la recherche du titre sur 'ju' pourra renvoyer des résultats comme 'Le juge et l'Assasin', 'La jurée', etc.
 
