@@ -1,7 +1,7 @@
 # Cinema version statique #
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-Gérer la liste des films
 
+Gérer la liste des films
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 Ce projet comporte un point d'entrée depuis le client:
 
 **GET** `http://localhost:8080/affiche?id=n` qui renvoie l'image de
