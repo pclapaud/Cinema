@@ -2,14 +2,12 @@ package fr.laerce.cinema;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
 
 /**
  * Created by fred on 03/02/2016.
@@ -17,8 +15,8 @@ import java.io.OutputStream;
 @WebServlet(name = "Affiche")
 public class Affiche extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        OutputStream out = response.getOutputStream();
-        FilmsDonnees fd = new FilmsDonnees();
+
+
 
 
     }

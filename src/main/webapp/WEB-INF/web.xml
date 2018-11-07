@@ -8,9 +8,18 @@
         <servlet-name>affiche</servlet-name>
         <servlet-class>fr.laerce.cinema.Affiche</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>list</servlet-name>
+        <servlet-class>fr.laerce.cinema.list</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>affiche</servlet-name>
         <url-pattern>/affiche</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>list</servlet-name>
+        <url-pattern>/list</url-pattern>
     </servlet-mapping>
 </web-app>
