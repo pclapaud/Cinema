@@ -17,6 +17,9 @@ import java.io.OutputStream;
 @WebServlet(name = "Affiche")
 public class Affiche extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        OutputStream out = response.getOutputStream();
+        FilmsDonnees fd = new FilmsDonnees();
+
 
     }
 
