@@ -4,13 +4,16 @@
 
 <web-app>
 
-    <context-param>
-        <param-name>url</param-name>
-        <param-value>C:\\Users\\patou\\Desktop\\CDA\\Frederick\\affiches</param-value>
-    </context-param>
+
     <servlet>
+
         <servlet-name>affiche</servlet-name>
         <servlet-class>fr.laerce.cinema.Affiche</servlet-class>
+        <init-param>
+            <param-name>url</param-name>
+            <param-value>C:\\Users\\patou\\Desktop\\CDA\\Frederick\\affiches</param-value>
+        </init-param>
+
     </servlet>
     <servlet>
         <servlet-name>list</servlet-name>

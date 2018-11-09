@@ -30,7 +30,7 @@ public class Affiche extends HttpServlet {
         Film film = fd.getById(id);
         ServletContext cntx= getServletContext();
         // Chemin absolu de l'image
-        String url = getServletContext().getInitParameter("url");
+        String url = getInitParameter("url");
         String filename = url+"/"+film.afficheNom;
 
 
