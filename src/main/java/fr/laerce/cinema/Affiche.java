@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Properties;
 
 /**
@@ -23,8 +26,14 @@ public class Affiche extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+
+
+
+
+
         // Récupération du nom de l'affiche dans le système de fichiers
-        Integer id = Integer.parseInt( request.getParameter("id"));
+        Integer id = Integer.parseInt(request.getPathInfo().substring(1));
         FilmsDonnees fd = new FilmsDonnees();
         Film film = fd.getById(id);
 //
@@ -42,6 +51,7 @@ public class Affiche extends HttpServlet {
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             return;
         }
+
 
         response.setContentType(mime);
         File file = new File(filename);

@@ -24,7 +24,7 @@ public class InfoFilm extends HttpServlet {
 
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Integer id = Integer.parseInt( request.getParameter("id"));
+        Integer id = Integer.parseInt(request.getPathInfo().substring(1));
         PrintWriter out = response.getWriter();
         FilmsDonnees fd = new FilmsDonnees();
         out.print("<body>");
@@ -49,7 +49,7 @@ public class InfoFilm extends HttpServlet {
 
         out.print("<ul>");
         out.print("<li>Titre : "+fd.getById(id).titre+"</li>");
-        out.print("<li><img height=\"300\" width=\"300\" src=/affiche?id="+fd.getById(id).id+"></li>");
+        out.print("<li><img height=\"300\" width=\"300\" src=/affiche/"+fd.getById(id).id+"></li>");
         out.print("<li> Note :"+fd.getById(id).note+"</li>");
         out.print("</ul>");
         out.print("</body>");

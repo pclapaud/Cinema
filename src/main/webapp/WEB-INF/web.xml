@@ -29,7 +29,7 @@
 
     <servlet-mapping>
         <servlet-name>affiche</servlet-name>
-        <url-pattern>/affiche</url-pattern>
+        <url-pattern>/affiche/*</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
@@ -38,7 +38,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>film</servlet-name>
-        <url-pattern>/film</url-pattern>
+        <url-pattern>/details/*</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Session</servlet-name>

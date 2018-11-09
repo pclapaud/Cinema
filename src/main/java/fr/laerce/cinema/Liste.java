@@ -24,7 +24,7 @@ public class Liste extends HttpServlet {
         out.print("<ul>");
         for (Film film:fd.lesFilms) {
             if (film.titre.toLowerCase().contains(name.toLowerCase())){
-            out.print("<li><a href='/film?id="+film.id+"'>"+film.titre+"</a></li>");
+            out.print("<li><a href='/details/"+film.id+"'>"+film.titre+"</a></li>");
             }
         }
         out.print("</ul>");
@@ -55,7 +55,7 @@ public class Liste extends HttpServlet {
         }
 
         for (Film film:fd.lesFilms) {
-            out.print("<li><a href='/film?id="+film.id+"'>"+film.titre+"</a></li>");
+            out.print("<li><a href='/details/"+film.id+"'>"+film.titre+"</a></li>");
         }
         out.print("</ul>");
         out.print("</body>");
