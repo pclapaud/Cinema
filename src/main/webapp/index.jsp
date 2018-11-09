@@ -9,9 +9,14 @@
         <a href="/list?name=ND">note decroissant</a><br>
         <a href="/list?name=NOMC">nom croissant</a><br>
         <a href="/list?name=NOMD">nom decroissant</a><br><br>
-<form method="post" action="/list">Cherchez
+<form method="post" action="/list">Cherchez film :
     <input name="name" type="text">
     <input type="submit" action="/list">
+</form>
+<form method="post" action="/session">Connection :
+    <input name="nom" type="text">user
+    <input name="mdp" type="password">mdp
+    <input type="submit" action="/Session">
 </form>
 </body>
 </html>

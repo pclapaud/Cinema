@@ -20,6 +20,12 @@
         <servlet-name>Session</servlet-name>
         <servlet-class>fr.laerce.cinema.Session</servlet-class>
     </servlet>
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>C:\\Users\\patou\\Desktop\\CDA\\Frederick\\affiches</param-value>
+    </context-param>
+
+
 
     <servlet-mapping>
         <servlet-name>affiche</servlet-name>
@@ -33,6 +39,10 @@
     <servlet-mapping>
         <servlet-name>film</servlet-name>
         <url-pattern>/film</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Session</servlet-name>
+        <url-pattern>/session</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Session</servlet-name>

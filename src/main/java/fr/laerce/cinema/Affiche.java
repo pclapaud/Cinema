@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.util.Properties;
 
 /**
  * Created by fred on 03/02/2016.
@@ -26,10 +27,15 @@ public class Affiche extends HttpServlet {
         Integer id = Integer.parseInt( request.getParameter("id"));
         FilmsDonnees fd = new FilmsDonnees();
         Film film = fd.getById(id);
+//
+
+
+
 
         ServletContext cntx= getServletContext();
         // Chemin absolu de l'image
-        String filename = cntx.getRealPath("WEB-INF/datas/affiches/"+film.afficheNom);
+        String url = getServletContext().getInitParameter("url");
+        String filename = url+"/"+film.afficheNom;
         // Type mime associé à l'image d'après le nom de fichier
         String mime = cntx.getMimeType(filename);
         if (mime == null) {
