@@ -19,40 +19,30 @@ import java.util.Properties;
 @WebServlet(name = "Affiche")
 public class Affiche extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-
-
 
 
         // Récupération du nom de l'affiche dans le système de fichiers
         Integer id = Integer.parseInt(request.getPathInfo().substring(1));
         FilmsDonnees fd = new FilmsDonnees();
         Film film = fd.getById(id);
-//
-
-
-
-
         ServletContext cntx= getServletContext();
         // Chemin absolu de l'image
         String url = getServletContext().getInitParameter("url");
         String filename = url+"/"+film.afficheNom;
+
+
+
+
+
         // Type mime associé à l'image d'après le nom de fichier
         String mime = cntx.getMimeType(filename);
         if (mime == null) {
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             return;
         }
-
-
         response.setContentType(mime);
         File file = new File(filename);
         // Longeur de la réponse

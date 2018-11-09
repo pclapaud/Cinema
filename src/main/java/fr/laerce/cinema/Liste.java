@@ -41,19 +41,18 @@ public class Liste extends HttpServlet {
         FilmsDonnees fd = new FilmsDonnees();
         out.print("<body>");
         out.print("<ul>");
+        //order par default
         Collections.sort(fd.lesFilms, (o1, o2) -> o1.titre.compareToIgnoreCase(o2.titre));
+        //les autres
         if(name.equals("NC")){
             Collections.sort(fd.lesFilms, (o1, o2) -> o1.noteString().compareToIgnoreCase(o2.noteString()));
         }
-
         if(name.equals("ND")){
             Collections.sort(fd.lesFilms, (o1, o2) -> o2.noteString().compareToIgnoreCase(o1.noteString()));
         }
         if(name.equals("NOMD")){
             Collections.sort(fd.lesFilms, (o1, o2) -> o2.titre.compareToIgnoreCase(o1.titre));
-
         }
-
         for (Film film:fd.lesFilms) {
             out.print("<li><a href='/details/"+film.id+"'>"+film.titre+"</a></li>");
         }

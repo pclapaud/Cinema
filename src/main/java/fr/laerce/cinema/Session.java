@@ -20,7 +20,6 @@ public class Session extends HttpServlet {
         String mdp = request.getParameter("mdp");
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession();
-
         out.println("votre nom : "+todos.get(0).nom);
         for (Utilisateur u:todos
         ) {
@@ -28,13 +27,8 @@ public class Session extends HttpServlet {
                 connecté=true;
                 session.setAttribute("connecté",connecté);
                 session.setAttribute("utilisateur",u);
-
             }
-
         }
-
-
-
         out.println("votre statut : "+connecté);
         response.sendRedirect("/session");
 

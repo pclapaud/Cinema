@@ -18,11 +18,8 @@ public class InfoFilm extends HttpServlet {
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-
-
     }
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Integer id = Integer.parseInt(request.getPathInfo().substring(1));
         PrintWriter out = response.getWriter();
@@ -31,28 +28,19 @@ public class InfoFilm extends HttpServlet {
         //Historique
         HttpSession session = request.getSession();
         if(session.getAttribute("connecté")!=null){
-            Boolean connecté = (Boolean)session.getAttribute("connecté");
-            if (connecté==true){
+            if ((Boolean)session.getAttribute("connecté")==true){
                 Utilisateur u = (Utilisateur) session.getAttribute("utilisateur");
-                out.print("<a href='/session'>ma session</a>");
-
                 u.historique.add(fd.getById(id).titre);
-
+                out.print("<a href='/session'>ma session</a>");
             }
 
         }
-
-
-
-
-
-
+        //Film
         out.print("<ul>");
         out.print("<li>Titre : "+fd.getById(id).titre+"</li>");
         out.print("<li><img height=\"300\" width=\"300\" src=/affiche/"+fd.getById(id).id+"></li>");
         out.print("<li> Note :"+fd.getById(id).note+"</li>");
         out.print("</ul>");
         out.print("</body>");
-
     }
 }

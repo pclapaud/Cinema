@@ -3,7 +3,11 @@
         "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-    <display-name>Archetype Created Web Application</display-name>
+
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>C:\\Users\\patou\\Desktop\\CDA\\Frederick\\affiches</param-value>
+    </context-param>
     <servlet>
         <servlet-name>affiche</servlet-name>
         <servlet-class>fr.laerce.cinema.Affiche</servlet-class>
@@ -20,10 +24,7 @@
         <servlet-name>Session</servlet-name>
         <servlet-class>fr.laerce.cinema.Session</servlet-class>
     </servlet>
-    <context-param>
-        <param-name>url</param-name>
-        <param-value>C:\\Users\\patou\\Desktop\\CDA\\Frederick\\affiches</param-value>
-    </context-param>
+
 
 
 
