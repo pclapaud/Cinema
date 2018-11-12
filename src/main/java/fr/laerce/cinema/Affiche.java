@@ -33,10 +33,6 @@ public class Affiche extends HttpServlet {
         String url = getInitParameter("url");
         String filename = url+"/"+film.afficheNom;
 
-
-
-
-
         // Type mime associé à l'image d'après le nom de fichier
         String mime = cntx.getMimeType(filename);
         if (mime == null) {
