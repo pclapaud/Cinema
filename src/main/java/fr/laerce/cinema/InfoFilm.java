@@ -24,23 +24,24 @@ public class InfoFilm extends HttpServlet {
         Integer id = Integer.parseInt(request.getPathInfo().substring(1));
         PrintWriter out = response.getWriter();
         FilmsDonnees fd = new FilmsDonnees();
-        out.print("<body>");
+        Film film = fd.getById(id);
+        request.setAttribute ("film", film);
+        request.setAttribute ("connecté",false);
+
         //Historique
         HttpSession session = request.getSession();
         if(session.getAttribute("connecté")!=null){
             if ((Boolean)session.getAttribute("connecté")==true){
                 Utilisateur u = (Utilisateur) session.getAttribute("utilisateur");
-                u.historique.add(fd.getById(id).titre);
-                out.print("<a href='/session'>ma session</a>");
+                u.historique.add(film.titre);
+                request.setAttribute ("connecté",true);
             }
 
         }
-        //Film
-        out.print("<ul>");
-        out.print("<li>Titre : "+fd.getById(id).titre+"</li>");
-        out.print("<li><img height=\"300\" width=\"300\" src=/affiche/"+fd.getById(id).id+"></li>");
-        out.print("<li> Note :"+fd.getById(id).note+"</li>");
-        out.print("</ul>");
-        out.print("</body>");
+        String jspview = "InfoFilm.jsp";
+        getServletConfig().getServletContext()
+                .getRequestDispatcher("/WEB-INF/jsp/"+jspview).forward(request, response);
+
+
     }
 }

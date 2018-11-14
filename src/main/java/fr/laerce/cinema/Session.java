@@ -20,7 +20,6 @@ public class Session extends HttpServlet {
         String mdp = request.getParameter("mdp");
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession();
-        out.println("votre nom : "+todos.get(0).nom);
         for (Utilisateur u:todos
         ) {
             if(nom.equals(u.nom) && mdp.equals(u.mdp)){
@@ -29,7 +28,7 @@ public class Session extends HttpServlet {
                 session.setAttribute("utilisateur",u);
             }
         }
-        out.println("votre statut : "+connecté);
+
         response.sendRedirect("/session");
 
 
@@ -40,24 +39,15 @@ public class Session extends HttpServlet {
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession();
         Utilisateur u = (Utilisateur) session.getAttribute("utilisateur");
-        out.print("<body>");
+        if (connecté){
+            request.setAttribute("historique", u.historique);
+            String jspview = "session.jsp";
+            getServletConfig().getServletContext()
+                    .getRequestDispatcher("/WEB-INF/jsp/" + jspview).forward(request, response);
+        }
 
-        if (session.getAttribute("connecté").equals(true)){
-            out.println("vous etes connecté : "+u.nom);
-        }
-        out.print("<br>votre historique:");
-        out.println("<ul>");
-        for (String nom:u.historique
-             ) {
-            out.println("<li>"+nom);
-        }
-        out.println("</ul>");
-        out.println("<a href='/index.jsp'>retour</a>");
-        out.print("</body>");
+
     }
-
-
-
     public void init() throws ServletException {
         this.todos = new ArrayList<Utilisateur>();
         todos.add(new Utilisateur("bob","123"));
