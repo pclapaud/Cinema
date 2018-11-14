@@ -13,6 +13,10 @@
     <title>Title</title>
 </head>
 <body>
+Bonjour ${nomU}<br>
+<c:if test="${historique !='[]'}">
+
+
 votre historique:
 <ul>
 
@@ -20,6 +24,7 @@ votre historique:
     <li>${nom}</li>
     </c:forEach>
 </ul>
+</c:if>
 <a href="/index.jsp">retour</a>
 </body>
 </html>

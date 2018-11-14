@@ -18,7 +18,7 @@
 <li><img height="300" width="300" src="/affiche/${film.id}"></li>
 <li> Note :${film.note}</li>
 </ul>
-<c:if test="${connecté == true}">
+<c:if test="${connecte == true}">
     <a href="/session">ma session</a>
 </c:if>
 

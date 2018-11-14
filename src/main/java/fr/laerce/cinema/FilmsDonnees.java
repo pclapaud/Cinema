@@ -17,10 +17,7 @@ public class FilmsDonnees {
                 new Film(4,"Légendes d'automne","legendesdautomne.jpg",3.9),
                 new Film(5,"E.T. l'extra-terrestre","et.jpg",4.2),
                 new Film(6,"BEN-HUR","ben-hur.jpg",4),
-                new Film(7,"La jurée","lajuree.jpg",3.1),
-                new Film(8,"E.T. l'extra-terrestre","et.jpg",4.2),
-                new Film(9,"BEN-HUR 2","ben-hur.jpg",4),
-                new Film(10,"La jurée 2","lajuree.jpg",3.1)
+                new Film(7,"La jurée","lajuree.jpg",3.1)
 
         );
     }

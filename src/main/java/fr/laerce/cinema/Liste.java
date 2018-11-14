@@ -59,7 +59,7 @@ public class Liste extends HttpServlet {
         for (Film film:fd.lesFilms) {
             mesfilm.add(film);
         }
-        request.setAttribute ("mesfilm", mesfilm);
+        request.setAttribute ("mesfilms", mesfilm);
         String jspview = "liste.jsp";
         getServletConfig().getServletContext()
                 .getRequestDispatcher("/WEB-INF/jsp/"+jspview).forward(request, response);

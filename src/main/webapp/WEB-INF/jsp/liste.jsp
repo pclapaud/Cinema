@@ -13,7 +13,7 @@
     <title>Title</title>
 </head>
 <body>
-<c:forEach items="${requestScope['mesfilm']}" var="film" >
+<c:forEach items="${mesfilms}" var="film" >
     <li><a href="/details/${film.id}">${film.titre}</a></li>
 </c:forEach>
 

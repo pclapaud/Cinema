@@ -41,6 +41,7 @@ public class Session extends HttpServlet {
         Utilisateur u = (Utilisateur) session.getAttribute("utilisateur");
         if (connecté){
             request.setAttribute("historique", u.historique);
+            request.setAttribute("nomU", u.nom);
             String jspview = "session.jsp";
             getServletConfig().getServletContext()
                     .getRequestDispatcher("/WEB-INF/jsp/" + jspview).forward(request, response);

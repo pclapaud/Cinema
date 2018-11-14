@@ -34,7 +34,7 @@ public class InfoFilm extends HttpServlet {
             if ((Boolean)session.getAttribute("connecté")==true){
                 Utilisateur u = (Utilisateur) session.getAttribute("utilisateur");
                 u.historique.add(film.titre);
-                request.setAttribute ("connecté",true);
+                request.setAttribute ("connecte",true);
             }
 
         }
