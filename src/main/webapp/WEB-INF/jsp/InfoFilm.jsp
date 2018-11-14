@@ -20,7 +20,6 @@
 </ul>
 <c:if test="${connecté == true}">
     <a href="/session">ma session</a>
-    ${connecté}
 </c:if>
 
 
